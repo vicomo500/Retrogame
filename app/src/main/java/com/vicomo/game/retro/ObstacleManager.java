@@ -34,6 +34,8 @@ public class ObstacleManager {
     }
 
     public void update(){
+        if(startTime < Constants.INIT_TIME)
+            startTime = Constants.INIT_TIME;
         int elapsedTime = (int) (System.currentTimeMillis() - startTime);
         this.startTime = System.currentTimeMillis();
         float speed = (float) (Math.sqrt(1+(startTime-initTime)/2000.0f))*Constants.SCREEN_HEIGHT/10000.0f;
